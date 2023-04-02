@@ -1,6 +1,6 @@
 # Zadanie 1
 import math
-from typing import Union, Tuple
+from typing import Union, List, Tuple
 import random
 A = {1 / i for i in range(1, 11)}
 print(f'Zbiór A: {A}')
@@ -47,3 +47,41 @@ print(row_kwadratowe(1, 2, 1))
 print(row_kwadratowe(1, 4, 1))
 
 # Zadanie 5
+
+
+def rzut_kostka(n: int) -> List[Tuple[str, int]]:
+    rzuty = [0] * 6
+    for i in range(n):
+        rzut = random.randint(1, 6)
+        rzuty[rzut-1] += 1
+    wynik = []
+    for i in range(6):
+        wynik.append(('oczka: ' + str(i+1), 'rzutów: ' + str(rzuty[i])))
+    return wynik
+
+
+n = int(input("Podaj ilość rzutów: "))
+wyniki = rzut_kostka(n)
+for wynik in wyniki:
+    print(wynik)
+
+# Zadanie 6
+
+
+def sort_string(*stringi: str) -> List[str]:
+    return sorted(stringi)
+
+
+stringi = input("Podaj ciągi znaków oddzielone spacjami: ").split()
+posortowane = sort_string(*stringi)
+print(posortowane)
+
+# Zadanie 7
+
+
+def sumuj(**punkty: int) -> int:
+    return sum(punkty.values())
+
+
+suma = sumuj(wisla=20, legia=15, lech=25)
+print("Łączna liczba punktów: ", suma)
