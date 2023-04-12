@@ -41,22 +41,22 @@ def join_files(file_list, output_file_name):
 
 # Zadanie 3
 
-# def ekstrema(lista, n):
-#     wybor = input(
-#         'Wciśnij 0 - szukanie najmniejszych wartości\nWciśnij 1 - szukanie największych wartości\n')
-#     if wybor == '0':
-#         wybor = False
-#     elif wybor == '1':
-#         wybor = True
-#     if not all(isinstance(i, (int, float)) for i in lista):
-#         return "Lista zawiera elementy inne niż liczby."
-#     sorted_list = sorted(lista, reverse=wybor)
-#     return sorted_list[:n]
+def ekstrema(lista, n):
+    wybor = input(
+        'Wciśnij 0 - szukanie najmniejszych wartości\nWciśnij 1 - szukanie największych wartości\n')
+    if wybor == '0':
+        wybor = False
+    elif wybor == '1':
+        wybor = True
+    if not all(isinstance(i, (int, float)) for i in lista):
+        return "Lista zawiera elementy inne niż liczby."
+    sorted_list = sorted(lista, reverse=wybor)
+    return sorted_list[:n]
 
 
-# A = [random.randint(1, 100) for _ in range(1, 100)]
+A = [random.randint(1, 100) for _ in range(1, 100)]
 
-# print(ekstrema(A, 5))
+print(ekstrema(A, 5))
 
 # Zadanie 4
 
